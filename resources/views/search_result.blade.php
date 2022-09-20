@@ -11,7 +11,7 @@
 <body>
     <form method="POST" action="{{ url('search') }}" enctype="multipart/form-data">
         @csrf
-        <input type="text" name="keywords" placeholder="Type here...">
+        <input type="text" name="keywords" placeholder="Type here..." required>
         <button type="submit">search</button>
         <a href="{{ url('create') }}"><button type="button">add new</button></a>
     </form><br>

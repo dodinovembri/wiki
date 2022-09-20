@@ -40,8 +40,9 @@
                 <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
                     <form method="POST" action="{{ url('search') }}" enctype="multipart/form-data">
                         @csrf
-                        <input type="text" name="keywords" placeholder="Type here...">
+                        <input type="text" name="keywords" placeholder="Type here..." required>
                         <button type="submit">search</button>
+                        <a href="{{ url('create') }}"><button type="button">add new</button></a>
                     </form>
                 </div>
             </div>

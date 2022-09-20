@@ -10,7 +10,11 @@ class SearchController extends Controller
     public function search(Request $request)
     {
         $keywords = $request->keywords;
-        $data['search_result'] = KnowledgeModel::where('knowledge', 'like', '%' . $keywords . '%')->get();
+        if ($keywords === "*") {
+            $data['search_result'] = KnowledgeModel::all();
+        }else{
+            $data['search_result'] = KnowledgeModel::where('knowledge', 'like', '%' . $keywords . '%')->get();
+        }
 
         return view('search_result', $data);
     }
