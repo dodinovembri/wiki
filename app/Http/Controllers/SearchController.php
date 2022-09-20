@@ -13,7 +13,7 @@ class SearchController extends Controller
         if ($keywords === "*") {
             $data['search_result'] = KnowledgeModel::all();
         }else{
-            $data['search_result'] = KnowledgeModel::where('knowledge', 'like', '%' . $keywords . '%')->get();
+            $data['search_result'] = KnowledgeModel::where('knowledge', 'like', '%' . $keywords . '%')->orWhere('title', 'like', '%' . $keywords . '%')->get();
         }
 
         return view('search_result', $data);
