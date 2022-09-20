@@ -14,6 +14,7 @@
         <input type="text" name="keywords" placeholder="Type here..." required>
         <button type="submit">search</button>
         <a href="{{ url('create') }}"><button type="button">add new</button></a>
+        <a href="{{ url('/') }}"><button type="button">back</button></a>
     </form><br>
     <table border="1">
         <tr>
